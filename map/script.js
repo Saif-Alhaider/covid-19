@@ -136,3 +136,114 @@ function cls(){
     document.querySelector('#myMap').style.display='block';
     document.querySelector('#pseudo').style.display='none'; 
 }
+
+/*
+function GetMap() {
+
+
+
+if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition((position)=> {
+        console.log(`latitude:${position.coords.latitude}\nlongitude:${position.coords.longitude}`)
+        let latitude = position.coords.latitude
+        let longitude = position.coords.longitude
+        
+        getPin(latitude,longitude)
+    })
+}
+function getPin(latitude,longitude){
+    var map = new Microsoft.Maps.Map('#myMap', {
+        credentials: 'AlqUbMVkRpMkWMcFs_18FoZGeNcg8RLToYX5OeOCHnexAuUZxqtesONoCbT1sTAd',
+        center: new Microsoft.Maps.Location(latitude,longitude),
+        mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+        zoom:2
+    });
+    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
+    map.entities.push(pushpin);
+    document.getElementById("LocateMeButton").click()
+
+}
+
+// Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+    
+//     var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+//     // Set Route Mode to driving
+//     directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.driving });
+//     var waypoint1 = new Microsoft.Maps.Directions.Waypoint({ address: 'Redmond', location: new Microsoft.Maps.Location(47.67683029174805, -122.1099624633789) });
+//     var waypoint2 = new Microsoft.Maps.Directions.Waypoint({ address: 'Seattle', location: new Microsoft.Maps.Location(47.59977722167969, -122.33458709716797) });
+//     directionsManager.addWaypoint(waypoint1);
+//     directionsManager.addWaypoint(waypoint2);
+//     // Set the element in which the itinerary will be rendered
+//     directionsManager.setRenderOptions({ itineraryContainer: document.getElementById('printoutPanel') });
+//     directionsManager.calculateDirections();
+//     directionsManager.geolocation
+// });
+}
+
+function StartTracking() {
+    //Add a pushpin to show the user's location.
+    userPin = new Microsoft.Maps.Pushpin(map.getCenter(), { visible: false });
+    map.entities.push(gpsPin);
+
+    //Watch the users location.
+    watchId = navigator.geolocation.watchPosition(UsersLocationUpdated);
+}
+
+function UsersLocationUpdated(position) {
+    var loc = new Microsoft.Maps.Location(
+                position.coords.latitude,
+                position.coords.longitude);
+
+    //Update the user pushpin.
+    userPin.setLocation(loc);
+    userPin.setOptions({ visible: true });
+
+    //Center the map on the user's location.
+    map.setView({ center: loc });
+}
+
+function StopTracking() {
+    // Cancel the geolocation updates.
+    navigator.geolocation.clearWatch(watchId);
+
+    //Remove the user pushpin.
+    map.entities.clear();
+}
+var xhttp = new XMLHttpRequest();
+var block,bs;
+var d={}
+var co = 0;
+
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      block = this.responseText;
+        var map = new Microsoft.Maps.Map('#myMap', {
+            credentials: 'AlqUbMVkRpMkWMcFs_18FoZGeNcg8RLToYX5OeOCHnexAuUZxqtesONoCbT1sTAd',
+            center: new Microsoft.Maps.Location(25,78),
+            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+            zoom: 5
+        });
+        infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+            visible: false
+        });
+        infobox.setMap(map);
+      renderBlocks(map);
+    }
+};
+xhttp.open("GET", "/blocks", true);
+xhttp.send();
+
+
+function showson(){
+    document.querySelector('.cvr').style.display='block';
+    document.querySelector('.hdd').style.display='block';
+    document.querySelector('#myMap').style.display='none';
+    document.querySelector('#pseudo').style.display='block'; 
+}
+function cls(){
+    document.querySelector('.cvr').style.display='none';
+    document.querySelector('.hdd').style.display='none';
+    document.querySelector('#myMap').style.display='block';
+    document.querySelector('#pseudo').style.display='none'; 
+}
+* */
